@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Neue Montreal", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #d4ccc9;
+    color: #1c1c1c;
+    overflow-x: hidden;
+    padding-bottom: 20vh; 
+}
+
+a {
+    transition: color 300ms ease;
+    color: inherit;
+    text-decoration: none; 
+}
+
+a:hover {
+    color: #fff;
+}
+
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.header-link, .header-text {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    will-change: transform;
+    transition: transform 0.1s ease-out; 
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 100px; 
+}
+
+.hero-title {
+    font-size: 12vw;
+    line-height: 0.9;
+    text-transform: uppercase;
+    perspective: 1000px; 
+}
+
+.hero-line {
+    display: block;
+    will-change: transform;
+}
+        
+.hero-reveal-text {
+    display: inline-block;
+    transform-origin: bottom center;
+    transform: rotateX(90deg); 
+    animation: revealHero 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes revealHero {
+    from { transform: rotateX(90deg); }
+    to { transform: rotateX(0deg); }
+}
+
+.white-text {
+    color: #fff;
+}
+
+.char {
+    display: inline-block;
+    will-change: transform;
+}
+
+.hero-logo-link {
+    position: absolute;
+    right: 40px; 
+    top: 70%;
+    z-index: 2; 
+}
+
+.toc-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    border-top: 1px solid #1c1c1c; 
+    width: 95%; 
+    margin: 0 auto; 
+}
+
+.toc-intro {
+    width: 25%;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.toc-list {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.toc-item {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 2px solid #1c1c1c;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.speed-section {
+    display: flex;
+    padding: 100px 5vw 0 5vw; 
+    margin-top: 50px;
+    position: relative; 
+    margin-bottom: 0;
+    z-index: 1;
+}
+
+.speed-text {
+    width: 35%;
+    padding-right: 50px;
+    align-self: flex-start;
+    height: fit-content;
+}
+
+.speed-text h3 {
+    font-size: 2rem; 
+    line-height: 1;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.speed-text p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.speed-gallery {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh; 
+}
+
+.speed-img-wrapper {
+    position: relative;
+}
+
+.speed-img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.speed-label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    white-space: nowrap;
+}
+
+.item-1 {
+    width: 60%;
+    align-self: flex-end; 
+    margin-right: 5%;
+    will-change: transform; 
+}
+
+.item-2 {
+    width: 80%;
+    align-self: flex-start;
+    margin-left: -50%; 
+    margin-top: 30vh; 
+    will-change: transform;
+}
+
+.item-3 {
+    width: 60%;
+    align-self: flex-end; 
+    margin-top: 50vh; 
+    will-change: transform;
+}
+
+.direction-section {
+    display: flex;
+    padding: 0 5vw 100px 5vw;
+    margin-top: -250vh; 
+    position: relative;
+    align-items: flex-start;
+    z-index: 5; 
+}
+
+.direction-text {
+    width: 35%;
+    padding-right: 50px;
+    position: relative;
+    height: fit-content;
+    z-index: 1; 
+    margin-top: 30vh; 
+    will-change: transform;
+}
+
+.direction-text h3 {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.direction-text p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.direction-visuals {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh; 
+    padding-top: 80vh; 
+    position: relative;
+    z-index: 10; 
+}
+
+.direction-line {
+    background-color: #fff;
+    color: #1c1c1c;
+    font-size: 10vw; 
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap; 
+    width: max-content;
+    will-change: transform;
+}
+
+.direction-line:nth-child(1),
+.direction-line:nth-child(3),
+.direction-line:nth-child(4) {
+    margin-left: -60vw;
+}
+
+.direction-line:nth-child(2) {
+    margin-left: 20vw;
+}
+
+.direction-line:nth-child(5) {
+    margin-left: 50vw; 
+}
+
+.lerp-section {
+    display: flex;
+    padding: 100px 5vw;
+    margin-top: 200px;
+    position: relative;
+}
+
+.lerp-text {
+    width: 35%;
+    padding-right: 50px;
+    align-self: flex-start;
+    height: fit-content;
+}
+
+.lerp-text h3 {
+    font-size: 2rem; 
+    line-height: 1;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.lerp-text p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.lerp-list {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.lerp-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 5.75rem;
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+.lerp-span {
+    display: flex;
+    width: 60px;
+    height: 50px;
+    background-color: #1c1c1c;
+    color: #fff; 
+    border-radius: 45%;
+    will-change: transform;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    flex-shrink: 0; 
+}
+
+.lerp-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.lerp-word-wrapper {
+    display: flex;
+    gap: 0.25em; 
+}
+
+.lerp-by {
+    display: inline-block;
+    will-change: transform;
+}
+
+.lerp-char {
+    display: inline-block;
+    will-change: transform;
+}
+
+.fixed-section {
+    display: flex;
+    padding: 100px 5vw;
+    margin-top: 150px;
+    position: relative;
+    align-items: flex-start;
+    height: 130vh; 
+}
+
+.fixed-text {
+    width: 35%;
+    padding-right: 50px;
+    position: relative;
+    height: fit-content;
+    z-index: 10;
+    margin-top: 20vh;
+    will-change: transform;
+}
+
+.fixed-text h3 {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.fixed-text p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.fixed-visuals {
+    width: 65%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%; 
+}
+
+.fixed-img-wrapper {
+    width: 80%;
+    height: 120vh;
+    background-image: url('https://old-loco-scroll.netlify.app/dist/images/locomotive04.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.footer-message-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 12vw;
+    line-height: 0.9;
+    text-transform: uppercase;
+    padding-left: 5vw;
+    perspective: 1000px;
+}
+
+.footer-line {
+    display: block;
+}
+
+.footer-line:last-child {
+    color: #fff;
+}
+
+.footer-reveal-text {
+    display: inline-block;
+    transform-origin: bottom center;
+    transform: rotateX(90deg);
+    will-change: transform;
+}
+
+.footer-reveal-text.is-visible {
+    animation: revealHero 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.github-section {
+    display: flex;
+    padding: 100px;
+    margin: 50px 5vw 0;
+    border-top: 1px solid #1c1c1c; 
+    position: relative;
+}
+
+.github-text {
+    width: 35%;
+    padding-right: 50px;
+    align-self: flex-start;
+}
+
+.github-text h3 {
+    font-size: 2rem; 
+    line-height: 1;
+    font-weight: 700;
+}
+
+.github-content {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.github-content h3 {
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.github-content p {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 400;
+    max-width: 80%;
+}
+
+.github-content p:last-child {
+    border-top: 1px solid #1c1c1c;
+    margin-top: 100px;
+    padding-top: 50px;
+}
+
+.github-content p:last-child a {
+    text-decoration: underline;
+}
+
+.github-btn {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: #1c1c1c;
+    color: #fff;
+    transform: color 700ms ease;
+    padding: 2rem;
+}
+
+.github-btn:hover {
+    background-color: #fff;
+    color: #1c1c1c;
+}

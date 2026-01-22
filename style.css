@@ -30,20 +30,17 @@ a:hover {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    position: fixed; 
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 100;
+}
+
+.header-link {
+    transition: color 300ms ease;
 }
 
 .header-link, .header-text {
     font-weight: 600;
     font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
     will-change: transform;
-    transition: transform 0.1s ease-out; 
 }
 
 .hero {
@@ -60,8 +57,6 @@ a:hover {
 .hero-title {
     font-size: 12vw;
     line-height: 0.9;
-    text-transform: uppercase;
-    perspective: 1000px; 
 }
 
 .hero-line {
@@ -71,14 +66,13 @@ a:hover {
         
 .hero-reveal-text {
     display: inline-block;
-    transform-origin: bottom center;
-    transform: rotateX(90deg); 
-    animation: revealHero 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: rotateX(-90deg) translateY(112px);
+    animation: revealHero 800ms ease-in-out forwards;
 }
 
 @keyframes revealHero {
-    from { transform: rotateX(90deg); }
-    to { transform: rotateX(0deg); }
+    from { transform: rotateX(-90deg) translateY(112px); }
+    to { transform: rotateX(0deg) translateY(0); }
 }
 
 .white-text {
@@ -123,7 +117,6 @@ a:hover {
 .toc-item {
     font-size: 1.5rem;
     font-weight: 700;
-    text-transform: uppercase;
     cursor: pointer;
     border-bottom: 2px solid #1c1c1c;
     display: flex;
@@ -133,10 +126,9 @@ a:hover {
 
 .speed-section {
     display: flex;
-    padding: 100px 5vw 0 5vw; 
-    margin-top: 50px;
+    padding: 100px 5vw 0; 
+    margin: 50px 0 -200vh;
     position: relative; 
-    margin-bottom: 0;
     z-index: 1;
 }
 
@@ -185,7 +177,6 @@ a:hover {
     color: #fff;
     font-size: 24px;
     font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.3);
     white-space: nowrap;
@@ -215,8 +206,8 @@ a:hover {
 
 .direction-section {
     display: flex;
-    padding: 0 5vw 100px 5vw;
-    margin-top: -250vh; 
+    padding: 0 5vw 100px;
+    margin-bottom: 200vh;
     position: relative;
     align-items: flex-start;
     z-index: 5; 
@@ -283,7 +274,7 @@ a:hover {
 .lerp-section {
     display: flex;
     padding: 100px 5vw;
-    margin-top: 200px;
+    margin: 200px 0 200vh;
     position: relative;
 }
 
@@ -361,7 +352,7 @@ a:hover {
 .fixed-section {
     display: flex;
     padding: 100px 5vw;
-    margin-top: 150px;
+    margin: 150px 0 200vh;
     position: relative;
     align-items: flex-start;
     height: 130vh; 
@@ -419,9 +410,7 @@ a:hover {
 .footer-title {
     font-size: 12vw;
     line-height: 0.9;
-    text-transform: uppercase;
     padding-left: 5vw;
-    perspective: 1000px;
 }
 
 .footer-line {
@@ -434,13 +423,12 @@ a:hover {
 
 .footer-reveal-text {
     display: inline-block;
-    transform-origin: bottom center;
-    transform: rotateX(90deg);
+    transform: rotateX(-90deg) translateY(112px);
     will-change: transform;
 }
 
 .footer-reveal-text.is-visible {
-    animation: revealHero 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: revealHero 800ms ease-in-out forwards;
 }
 
 .github-section {
@@ -507,4 +495,59 @@ a:hover {
 .github-btn:hover {
     background-color: #fff;
     color: #1c1c1c;
+}
+
+@media screen and (max-width: 1000px) {
+    .toc-section {
+        flex-flow: column nowrap;
+        font-size: 1rem;
+    }
+
+    .toc-intro {
+        width: 90%;
+        margin-bottom: 10vh;
+    }
+
+    .toc-list {
+        width: 90%;
+    }
+
+    .speed-section,
+    .direction-section,
+    .lerp-section {
+        flex-flow: column nowrap;
+    }
+
+    .speed-text,
+    .speed-gallery,
+    .direction-text,
+    .lerp-text {
+        width: 100%;
+        padding: 0 5vw;
+    }
+
+    .speed-gallery {
+        justify-content: space-between;
+        gap: 250vh;
+    }
+
+    .item-1,
+    .item-2,
+    .item-3 {
+        align-self: center;
+        margin: 0;
+    }
+
+    .lerp-item {
+        font-size: 2rem;
+    }
+
+    .lerp-section {
+        align-items: center;
+        
+    }
+
+    .lerp-text {
+        margin-bottom: 80vh;
+    }
 }

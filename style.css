@@ -398,6 +398,7 @@ a:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
+    z-index: 20;
 }
 
 .footer-message-section {
@@ -443,6 +444,7 @@ a:hover {
     width: 35%;
     padding-right: 50px;
     align-self: flex-start;
+    margin-bottom: 5vh;
 }
 
 .github-text h3 {
@@ -514,16 +516,25 @@ a:hover {
 
     .speed-section,
     .direction-section,
-    .lerp-section {
+    .lerp-section,
+    .github-section,
+    .fixed-section {
         flex-flow: column nowrap;
+        padding: 0;
+        height: auto;
     }
 
     .speed-text,
     .speed-gallery,
     .direction-text,
-    .lerp-text {
+    .lerp-text,
+    .github-text,
+    .github-content,
+    .fixed-text,
+    .fixed-visuals {
         width: 100%;
-        padding: 0 5vw;
+        padding: 5vh 5vw 0;
+        text-align: center;
     }
 
     .speed-gallery {
@@ -542,12 +553,37 @@ a:hover {
         font-size: 2rem;
     }
 
-    .lerp-section {
+    .lerp-section,
+    .github-section {
         align-items: center;
-        
     }
 
     .lerp-text {
         margin-bottom: 80vh;
+    }
+
+    .github-content p {
+        margin: 0 auto;
+    }
+
+    .fixed-section {
+        height: auto;
+        padding-bottom: 10vh;
+    }
+
+   .fixed-visuals {
+        justify-content: center;
+        height: 60vh;
+        min-height: 400px;
+        margin-bottom: 5vh;
+    }
+    
+    .fixed-img-wrapper {
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
 }

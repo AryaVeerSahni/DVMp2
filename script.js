@@ -93,7 +93,7 @@ window.addEventListener('scroll', () => {
         }
 
         const angle = angles[index % angles.length];
-        line.style.transform = `rotate(${angle}deg) translate(${ (direction * dirDelta * 2) + offset }px, ${(-0.2 * dirDelta) - 500}px)`;
+        line.style.transform = `rotate(${angle}deg) translate(${ (direction * dirDelta * 2) + offset }px, ${(-0.2 * dirDelta) - 300}px)`;
     });
 
     const relativeScroll = scrollPosition - dirSectionOffset;

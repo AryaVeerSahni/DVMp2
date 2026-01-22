@@ -60,8 +60,8 @@ window.addEventListener('scroll', () => {
     targetScroll = window.scrollY;
     const scrollPosition = window.scrollY;
 
-    headerLeft.style.transform = `translate(${0.3 * scrollPosition}px, -${0.2 * scrollPosition}px)`;
-    headerRight.style.transform = `translate(-${0.3 * scrollPosition}px, -${0.2 * scrollPosition}px)`;
+    headerLeft.style.transform = `translate(${0.3 * scrollPosition}px, ${0.8 * scrollPosition}px)`;
+    headerRight.style.transform = `translate(-${0.3 * scrollPosition}px, ${0.8 * scrollPosition}px)`;
 
     line1.style.transform = `translateY(${scrollPosition * 0.2}px)`;
     line2.style.transform = `translateY(${scrollPosition * 0.3}px)`;
@@ -93,7 +93,7 @@ window.addEventListener('scroll', () => {
         }
 
         const angle = angles[index % angles.length];
-        line.style.transform = `rotate(${angle}deg) translateX(${ (direction * dirDelta * 2) + offset }px)`;
+        line.style.transform = `rotate(${angle}deg) translate(${ (direction * dirDelta * 2) + offset }px, ${(-0.2 * dirDelta) - 500}px)`;
     });
 
     const relativeScroll = scrollPosition - dirSectionOffset;
